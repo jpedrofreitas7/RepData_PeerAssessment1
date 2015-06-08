@@ -48,7 +48,7 @@ The maximum number of steps occurred for the 5-minutes interval 835. So, at 8:35
 
 ## Imputing missing values
 
-There are 2304 rows with missing values. The missing values were imputed using the average number of steps for that interval.
+There are 2304 rows with missing values. The missing values were imputed using the mean number of steps for eacht 5-minute interval.
 
 
 ```r
@@ -62,7 +62,7 @@ for(i in day5mininterval){
 totalnumberofsteps <- tapply(newdata$steps,newdata$date,sum)
 mean_steps <- round(mean(totalnumberofsteps,na.rm=T),1)
 median_steps <- round(median(totalnumberofsteps,na.rm=T),1)
-hist(totalnumberofsteps, breaks = 10, col="red", main = "Imputed histogram", xlab = "Total number of steps in a day")
+hist(totalnumberofsteps, breaks = 10, col="red", main = "Imputed data histogram", xlab = "Total number of steps in a day")
 abline(v = mean_steps, col = "blue",lwd = 4, lty = "dashed")
 abline(v = median_steps, col = "green", lwd = 4, lty = "dotted")
 ```
