@@ -88,6 +88,26 @@ newdata$isweekday <- as.factor(weekdays(newdata$date))
 levels(newdata$isweekday) <- c("weekday", "weekday", "weekend", "weekend", "weekday","weekday","weekday")
 
 library(dplyr)
+```
+
+```
+## Warning: package 'dplyr' was built under R version 3.1.2
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+## 
+## The following object is masked from 'package:stats':
+## 
+##     filter
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 newdata1 <- newdata %>% group_by(interval,isweekday) %>%
       summarise(averagenumberofsteps = mean(steps))
 

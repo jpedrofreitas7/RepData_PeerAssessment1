@@ -272,7 +272,24 @@ abline(v = median_steps, col = &quot;green&quot;, lwd = 4, lty = &quot;dotted&qu
 levels(newdata$isweekday) &lt;- c(&quot;weekday&quot;, &quot;weekday&quot;, &quot;weekend&quot;, &quot;weekend&quot;, &quot;weekday&quot;,&quot;weekday&quot;,&quot;weekday&quot;)
 
 library(dplyr)
-newdata1 &lt;- newdata %&gt;% group_by(interval,isweekday) %&gt;%
+</code></pre>
+
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.1.2
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;
+## 
+## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter
+## 
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union
+</code></pre>
+
+<pre><code class="r">newdata1 &lt;- newdata %&gt;% group_by(interval,isweekday) %&gt;%
       summarise(averagenumberofsteps = mean(steps))
 
 library(lattice)
